@@ -55,12 +55,12 @@ Cách làm đơn giản: **Nhìn vật thật → chọn đúng class → vẽ m
 
 | Mức | Quy ước dễ hiểu |
 |---|---|
-| `0` | Không bị vật khác che hoặc chỉ che không đáng kể |
-| `1` | Bị che ít: ước tính **dưới 30%** vật |
-| `2` | Bị che vừa/nhiều: ước tính **từ 30% đến dưới 70%** vật |
-| `3` | Bị che rất nhiều: ước tính **từ 70% trở lên**, nhưng vẫn nhận diện đủ chắc chắn để gán |
+| `0` | Không bị vật khác che: ước tính **0%** |
+| `1` | Bị che ít: ước tính **trên 0% đến dưới 30%** vật |
+| `2` | Bị che vừa: ước tính **từ 30% đến dưới 50%** vật |
+| `3` | Bị che nhiều: ước tính **từ 50% trở lên**, nhưng vẫn nhận diện đủ chắc chắn để gán |
 
-Các ngưỡng phần trăm này là **quy ước của nhóm cho v1.0** để giảm bất đồng. Đây là ngưỡng thao tác khi ước lượng bằng mắt, không yêu cầu đo diện tích chính xác. Mọi thay đổi sau lượt gán độc lập phải được ghi ở guideline v1.1 và nhật ký calibration.
+Các ngưỡng phần trăm này là **quy ước của nhóm cho v1.0** để giảm bất đồng. Mức che đúng 30% thuộc mức `2`; đúng 50% thuộc mức `3`. Đây là ngưỡng thao tác khi ước lượng bằng mắt, không yêu cầu đo diện tích chính xác. Mọi thay đổi sau lượt gán độc lập phải được ghi ở guideline v1.1 và nhật ký calibration.
 
 **Ví dụ:** Một người đứng sau xe hơi, thân bị che → `occluded_level` khác `0`. Một xe còn nhìn thấy một nửa vì ra khỏi mép phải ảnh → `truncated=yes` (không tự coi đây là `occluded_level` nếu không bị vật khác che).
 
@@ -149,7 +149,7 @@ Các ngưỡng kỹ thuật hiện có trong `submission/taxonomy.json` của re
 |---|---|---|
 | v0 | Guideline khởi đầu của repo | Tham khảo |
 | v1.0 dự thảo | Tổng hợp 5 guideline cá nhân, đề xuất 10 class và 14 quy tắc | Đã kết thúc |
-| v1.0 đã chốt | Ngày 16/11/2026; mã duyệt: 119, 128, 210, 226, 232; chốt 10 class, ngưỡng che khuất 30%/70%, vật nhỏ dưới 20 px và không gán vật chỉ xuất hiện qua phản chiếu | **Đã thống nhất** |
+| v1.0 đã chốt | Ngày 16/11/2026; mã duyệt: 119, 128, 210, 226, 232; chốt 10 class, ngưỡng che khuất 30%/50%, vật nhỏ dưới 20 px và không gán vật chỉ xuất hiện qua phản chiếu | **Đã thống nhất** |
 | v1.1 | Chỉ cập nhật sau IAA/calibration, kèm lý do và ca cụ thể | Chưa thực hiện |
 
 ---

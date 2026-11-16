@@ -1,12 +1,17 @@
 {
-  "version": "v0",
+  "version": "v1.0",
   "ignore_class": "ignore_region",
   "classes": [
     {"name": "car", "definition": "Ô tô con, SUV."},
     {"name": "truck", "definition": "Xe tải, xe có thùng hàng riêng."},
     {"name": "van", "definition": "Xe thùng kín cỡ nhỏ."},
+    {"name": "bus", "definition": "Xe lớn được thiết kế để chở nhiều hành khách."},
+    {"name": "bicycle", "definition": "Xe đạp không có động cơ."},
+    {"name": "pickup_truck", "definition": "Xe có cabin phía trước và thùng hàng hở phía sau."},
     {"name": "motorcycle", "definition": "Xe máy, mô tô."},
     {"name": "person", "definition": "Người đi bộ hoặc người ngồi trên xe."},
+    {"name": "traffic_light", "definition": "Cụm đèn tín hiệu dùng để điều khiển giao thông."},
+    {"name": "traffic_sign", "definition": "Biển chỉ dẫn, cấm, cảnh báo hoặc điều tiết giao thông."},
     {"name": "ignore_region", "definition": "Vùng bỏ qua (không phải vật): nơi không gán từng vật, bỏ sót ở đây không tính là lỗi."}
   ],
   "attributes": [

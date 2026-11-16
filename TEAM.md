@@ -1,9 +1,9 @@
 # Thông tin nhóm
 
-- Tên nhóm:
-- Mã thành viên (ba chữ số):
-- Người điều phối:
-- Người review bản cuối:
+- Tên nhóm: K5-L2A — Day 07
+- Mã thành viên (ba chữ số): 119, 128, 210, 226, 232
+- Người điều phối: 210
+- Người review bản cuối: Phân công ở Pha 6 (khác người sửa nhãn nếu có thể)
 - Commit chốt bài (điền ở kênh nộp sau khi commit):
 
 ## Kết quả tóm tắt (điền cuối bài)

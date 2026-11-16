@@ -1,92 +1,78 @@
-# Guideline cá nhân 232 — Vẽ box rõ và nhất quán
+# Guideline cá nhân 232 — Kiểm tra chất lượng trước khi xuất
 
-- Phiên bản: cá nhân 232 — lần 1
-- Mã thành viên: 232
-- Phạm vi: bounding box cho đối tượng giao thông đường bộ
+Người điền: Huỳnh Ngọc Gia Hân
+Mã sinh viên: 2A202603128
+
+- Phiên bản: v0.1 cá nhân (nháp đề xuất, chưa phải v1.0 nhóm)
+- Ngày: 2026-11-16
+- Người duyệt: 210
+- Phạm vi: bounding box (hình chữ nhật) cho đối tượng giao thông đường bộ
 
 ## 1. Mục tiêu
 
-Tôi sử dụng guideline này để chọn class, vẽ box và ghi thuộc tính nhất quán. Box bám sát phần vật nhìn thấy. Tôi xác định class theo hình dạng và chức năng của vật, không dựa riêng vào màu sắc.
+Ưu tiên dễ kiểm tra lại: cùng class, box gọn, thuộc tính đủ. Mọi quyết định chưa chắc phải có dấu vết để reviewer hiểu.
 
-## 2. Class và thuộc tính
+## 2. Các class đề xuất
 
-### Class
-
-| Class | Định nghĩa | Ví dụ | Không thuộc class |
+| Class dùng trong CVAT | Giải thích đơn giản | Ví dụ | Dễ nhầm |
 |---|---|---|---|
-| `person` | Người thật, gồm người đi bộ và người ngồi trên xe | Người đi bộ, người lái xe máy | Tượng, ma-nơ-canh, hình in |
-| `car` | Ô tô con chở người | Sedan, SUV | Xe bán tải có thùng hàng hở |
-| `motorcycle` | Xe máy, mô tô | Xe tay ga, xe số | Xe đạp |
-| `truck` | Xe tải chở hàng có thùng hàng riêng | Xe tải thùng, xe tải lớn | Xe van nhỏ, xe bán tải |
-| `van` | Xe van nhỏ, khoang hàng kín liền thân | Xe giao hàng nhỏ | Xe tải thùng rời |
-| `bus` | Xe buýt, xe khách cỡ lớn | Xe buýt công cộng | Xe van nhỏ |
-| `bicycle` | Xe đạp | Xe đạp thường, xe đạp thể thao | Xe máy |
-| `pickup_truck` | Xe bán tải có cabin và thùng chở hàng hở phía sau | Xe bán tải | Xe tải thùng lớn |
-| `traffic_light` | Đèn tín hiệu điều khiển giao thông | Cụm đèn đỏ, vàng, xanh | Đèn đường |
-| `traffic_sign` | Biển báo điều khiển hoặc hướng dẫn giao thông | Biển cấm, cảnh báo, chỉ dẫn | Biển quảng cáo |
+| `person` | Người thật | người đi bộ, người ngồi trên xe (img_005, img_014) | Không phải: tượng (img_017), ma-nơ-canh (img_033) |
+| `car` | Ô tô con | sedan, SUV (img_015, SUV đỏ trong img_028) | Không phải: xe bán tải có thùng hàng hở (img_028) |
+| `motorcycle` | Xe máy, mô tô | xe tay ga, xe số, xe phân khối lớn (img_005) | Không phải: xe đạp |
+| `truck` | Xe tải chở hàng | xe tải thùng, xe tải lớn, xe chở ô tô (img_002) | Không phải: xe van nhỏ, xe bán tải |
+| `van` | Xe van kín | xe giao hàng nhỏ thùng kín liền thân (van trắng trong img_005) | Không phải: xe tải thùng rời |
+| `bus` | Xe buýt, xe khách | xe buýt công cộng, xe chở khách lớn (nền img_037) | Không phải: xe van nhỏ |
+| `bicycle` | Xe đạp | xe đạp thường, xe đạp thể thao | Không phải: xe máy |
+| `pickup_truck` | Xe bán tải | ô tô cabin chở người, thùng chở hàng hở phía sau (img_028, img_037) | Không phải: xe tải thùng lớn |
+| `traffic_light` | Đèn tín hiệu giao thông | cụm đèn đỏ/vàng/xanh điều khiển giao thông | Không phải: đèn đường |
+| `traffic_sign` | Biển báo giao thông | biển cấm, biển cảnh báo, biển chỉ dẫn | Không phải: biển quảng cáo |
 
-Tôi không gán class đối tượng cho cây, nhà, mặt đường, đồ chơi, tượng và ma-nơ-canh. `ignore_region` là vùng bỏ qua, không phải class vật thể và không dùng thay cho class chưa xác định.
+`ignore_region` không phải vật giao thông: chỉ sử dụng theo quy tắc nhóm để khoanh vùng bỏ qua; đừng dùng thay cho nhãn khó đoán. Các vật như cây, nhà, mặt đường, đồ chơi, tượng, ma-nơ-canh không nằm trong bộ class đề xuất.
 
-Báo cáo cá nhân sử dụng bộ 10 class ở bảng trên. Task CVAT hiện có 5 class đối tượng của repo gốc: `person`, `car`, `motorcycle`, `truck`, `van`. Việc thống nhất taxonomy và guideline chung được thực hiện riêng cùng nhóm; tài liệu này không thay đổi cấu hình Task hiện tại.
+**Chú ý:** Repo gốc chỉ có 5 class đối tượng (`person`, `car`, `motorcycle`, `truck`, `van`). Năm class bổ sung (`bus`, `bicycle`, `pickup_truck`, `traffic_light`, `traffic_sign`) chỉ dùng khi cả nhóm phê duyệt taxonomy v1.0.
 
-### Thuộc tính `occluded_level`
+### Thuộc tính
 
-| Giá trị | Ý nghĩa | Quy tắc xác định |
+- `occluded_level`: `0` = thấy rõ, `1` = bị che ít, `2` = bị che nhiều, `3` = khó nhận ra do che. **Các mức phần trăm che cụ thể phải được nhóm chốt; chưa có ngưỡng % trong nguồn.**
+- `truncated`: `yes` nếu vật bị cắt ở mép ảnh, còn lại `no`.
+- `can_review`: đánh dấu khi chưa chắc nhãn hoặc box, sau đó báo nhóm.
+
+## 3. Cách vẽ box
+
+1. Chọn đúng class cho **vật thật** trong ảnh; một vật chỉ có một class.
+2. Vẽ khung gọn theo phần vật nhìn thấy; không kéo ôm nhiều đối tượng thành một khung.
+3. Người trên xe và chiếc xe là hai đối tượng riêng nếu cả hai thuộc taxonomy.
+4. Nếu bị che/cắt mép, gán đúng thuộc tính; nếu còn mơ hồ thì đánh dấu cần xem lại.
+5. Không vẽ box cho vật ngoài danh sách; không tự đổi tên class trong CVAT.
+
+## 4. Các tình huống cần xem kỹ
+
+| Quy tắc nháp | Tình huống | Cách xử lý đề xuất (cần nhóm duyệt) |
 |---|---|---|
-| `0` | Thấy rõ | Không bị vật khác che. |
-| `1` | Bị che ít | Phần bị che trên 0% đến 25% diện tích hình dáng đầy đủ ước lượng của đối tượng. |
-| `2` | Bị che nhiều | Phần bị che trên 25%; vẫn đủ bằng chứng xác định mức che và nhận diện class. |
-| `3` | Không rõ | Không đủ bằng chứng để xác định mức che; đặt thêm `can_review=true`. |
+| `R-01` | Người/xe dính nhau | Nếu là hai vật thật, tách hai box theo từng đối tượng. |
+| `R-02` | Đối tượng bị che | Đánh occluded_level và can_review nếu khó xác định ranh. |
+| `R-03` | Ảnh không có class đã chọn | Không vẽ box giả; vẫn giữ ảnh khi export. |
+| `R-04` | Xe phản chiếu qua kính | Không tự gán; đưa vào danh sách ca cần thống nhất. |
 
-Tôi dùng mốc 25% để phân biệt che ít và che nhiều. Đúng 25% ghi mức `1`; trên 25% ghi mức `2`. Mức `3` thể hiện không rõ mức che, không đồng nghĩa với che trên 75%.
+**Ví dụ từ ảnh thật** (đã mở xem):
 
-Tỷ lệ che được ước lượng theo phần hình dáng bị vật khác chắn so với hình dáng đầy đủ của chính đối tượng. Không dùng số px cố định hoặc tỷ lệ diện tích box. Với người, xét tổng thể đầu, thân, tay và chân; không dùng tỷ lệ chiều cao thay cho tỷ lệ diện tích.
+| Ảnh | Quy tắc | Quyết định | Lý do |
+|---|---|---|---|
+| img_005 | `R-01`, `R-02` | Mỗi người trên xe máy một box `person`, mỗi xe máy một box `motorcycle`; van trắng phía sau `van`, occluded_level 2. | Người và xe là hai vật thật; van bị người phía trước che nhiều. |
+| img_002 | `R-01`, `R-02` | Xe chở ô tô một box `truck`; mỗi ô tô thật trên xe một box `car` (xe tầng dưới occluded_level 1–2); người đứng bên phải `person`. | Các ô tô là xe thật, chỉ đang được chở. |
+| img_015 | `R-02` | Xe đỏ bên trái và xe bạc bên phải `car`, truncated = yes. | Xe bị cắt ở mép ảnh nhưng vẫn nhận ra là ô tô. |
+| img_017 | `R-03` | Không vẽ box. | Tượng người cưỡi ngựa, không phải người thật. |
+| img_038 | `R-03` | Không vẽ box; vẫn giữ ảnh khi export. | Ô tô đồ chơi trong tủ kính, không phải xe thật. |
+| img_027 | `R-03` | Không vẽ box. | Tượng đài hình xe bán tải đặt trên bệ đá trong nghĩa trang, không phải xe thật. |
+| img_033 | `R-04` | Không gán ma-nơ-canh và người trên ảnh in; phần xe (gương, cửa) bên phải nghi là phản chiếu → không tự gán, đưa vào danh sách ca cần thống nhất. | Không phải vật thật / chưa chắc là xe thật. |
+| img_028 | `R-02` | Xe bán tải `pickup_truck` (nếu nhóm duyệt class này); SUV đỏ phía sau `car`, occluded_level 1; tượng ngựa không gán. | Xe bán tải có thùng hàng hở, không phải `car` hay `truck` theo bảng class. |
+| img_004 | `R-03` | Tuk-tuk không gán (ngoài danh sách); người ngồi trong xe nhìn thấy được → `person`, tick can_review nếu khó xác định ranh. | Tuk-tuk không thuộc bộ class đề xuất. |
 
-Phần nằm ngoài khung ảnh không tính vào mức che. Người ngồi trên xe có chân bị xe chắn được tính là che khuất; chân co lại do tư thế không tự động tính là bị che. Không vẽ thêm phần khuất để tính tỷ lệ.
+File SAM3 chỉ liệt kê ảnh ứng viên, **không chứng minh nhãn trong ảnh là đúng**.
 
-### Thuộc tính `truncated`
+## 5. QC và lịch sử
 
-- `yes`: đối tượng bị cắt ở mép ảnh.
-- `no`: đối tượng không bị cắt ở mép ảnh.
-
-Đối tượng bị cắt mép nhưng phần còn trong ảnh không bị vật khác chắn được ghi `truncated=yes`, `occluded_level=0`.
-
-### Thuộc tính `can_review`
-
-- `true`: chưa chắc class, ranh giới box hoặc mức che.
-- `false`: xác định được class, box và mức che theo guideline.
-
-Nếu chưa thể vẽ box, tôi ghi vấn đề cấp ảnh gồm tên ảnh, mã thành viên, vùng ảnh và lý do. Cờ occluded mặc định của CVAT không thay thế `occluded_level`.
-
-## 3. Quy tắc vẽ box
-
-1. Một vật có một class và một box; không gộp nhiều vật vào một box.
-2. Vẽ hình chữ nhật nhỏ nhất bao toàn bộ các phần còn nhìn thấy của cùng một vật. Không mở rộng box để bao phần bị khuất.
-3. Người ngồi trên xe và chiếc xe được gán riêng nếu cả hai thuộc bộ class.
-4. Box nằm trong giới hạn ảnh. Vật bị cắt mép ghi `truncated=yes`.
-5. Box đối tượng có chiều cao tối thiểu 20 px. Vật thấp hơn 20 px không được phóng box để đạt ngưỡng; không gán box đối tượng đó. Chiều cao đúng 20 px đạt điều kiện kích thước.
-6. Không tự đổi class hoặc sửa taxonomy của Task trong quá trình gán theo cấu hình đã khóa.
-
-## 4. Xử lý tình huống
-
-| Mã quy tắc | Tình huống | Cách xử lý |
-|---|---|---|
-| `R-01` | Box sát vật | Đặt cạnh box sát các điểm ngoài cùng của phần vật còn nhìn thấy, hạn chế nền thừa. |
-| `R-02` | Vật đi ra mép ảnh | Chỉ vẽ trong ảnh, ghi `truncated=yes`. |
-| `R-03` | Vật bị che | Bao các phần còn nhìn thấy của cùng một vật; ghi mức che theo bảng thuộc tính. |
-| `R-04` | Vật rất nhỏ | Không gán box đối tượng cao dưới 20 px; không tự phóng box. |
-| `R-05` | Người trên xe | Gán người và xe thành hai đối tượng riêng; xác định mức che của từng đối tượng. |
-| `R-06` | Tượng, ma-nơ-canh, đồ chơi, hình in hoặc phản chiếu | Không gán như người hoặc phương tiện thật trong cảnh. |
-| `R-07` | Không xác định được mức che | Ghi `occluded_level=3`, đặt `can_review=true`. |
-| `R-08` | Xe chở xe | Xét từng xe thật như một đối tượng riêng nếu thuộc class và đạt ngưỡng kích thước. |
-| `R-09` | Vật ngoài bộ class | Không ép vào class gần giống; ghi vấn đề cấp ảnh nếu cần làm rõ. |
-
-## 5. Kiểm tra chất lượng và phiên bản
-
-Trước khi xuất COCO 1.0, tôi kiểm tra class, độ sát của box, đối tượng bị bỏ sót, box trùng và ba thuộc tính `occluded_level`, `truncated`, `can_review`. Ảnh không có đối tượng vẫn phải có trong danh sách ảnh của COCO.
-
-Giữ nguyên các ngưỡng `rules` trong taxonomy: chiều cao box tối thiểu 20 px, IoU lớn 0.85 và IoU nhỏ 0.70. Ngưỡng che 25% là quy tắc của guideline cá nhân này.
-
-Danh sách phát hiện SAM3 chỉ là tài liệu tham khảo tên class, không xác nhận box hoặc class đúng. Tài liệu có sử dụng AI hỗ trợ diễn đạt; cách đối chiếu ảnh và kết quả kiểm tra được ghi trong ghi chú cá nhân khi thực hiện.
-
-Phiên bản cá nhân 232 — lần 1 quy định bộ class, cách vẽ box và thuộc tính che khuất. Guideline chung được duyệt riêng cùng nhóm.
+- Kiểm lại class, khung, thuộc tính trước khi xuất COCO 1.0.
+- Rà ảnh từng frame trước khi lưu — Kiểm số ảnh xuất COCO bằng danh sách được phân công (`submission/qc/assignments/232.txt`, 24 ảnh).
+- Ngưỡng kỹ thuật của repo: chiều cao box tối thiểu 20 px; IoU lớn 0.85, nhỏ 0.70. Nhóm không sửa `taxonomy.json` → `rules`.
+- Lịch sử: v0.1 cá nhân của 232, dựa trên bản nháp 05; chỉ ghi `v1.0` khi cả nhóm đã chốt và khóa.

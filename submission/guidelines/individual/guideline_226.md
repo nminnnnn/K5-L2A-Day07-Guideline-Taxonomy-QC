@@ -1,9 +1,9 @@
 # Guideline cá nhân 04 — Chú ý biển báo và đèn đường
 
-> **Bản nháp để thành viên tự rà soát và bổ sung, không phải guideline cá nhân đã làm độc lập.** Chỉ nộp với tên mã thật và quyết định tự mình kiểm tra.
+Người điền: Lương Văn Quyến Mã sinh viên: 2A202603226
 
 - Phiên bản: nháp đề xuất (chưa phải v1.0 nhóm)
-- Người duyệt: **[điền mã ba chữ số]**
+- Người duyệt: 232
 - Phạm vi: bounding box (hình chữ nhật) cho đối tượng giao thông đường bộ
 
 ## 1. Mục tiêu

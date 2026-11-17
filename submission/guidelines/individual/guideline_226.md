@@ -1,6 +1,6 @@
-# Guideline cá nhân 04 — Chú ý biển báo và đèn đường
+# Guideline cá nhân 226 — Chú ý biển báo và đèn đường
 
-Người điền: Lương Văn Quyến Mã sinh viên: 2A202603226
+Người điền: mã `226`
 
 - Phiên bản: nháp đề xuất (chưa phải v1.0 nhóm)
 - Người duyệt: 232
@@ -52,7 +52,7 @@ Chỉ chọn các vật liên quan điều khiển và hướng dẫn giao thôn
 | `R-03` | Đèn chiếu sáng đường | Không gán traffic_light cho đèn đường. |
 | `R-04` | Biển quảng cáo cạnh đường | Không gán traffic_sign nếu không phải biển giao thông. |
 
-**Ví dụ từ ảnh thật:** [thành viên tự điền ít nhất 2 mã `img_0xx` đã mở xem, quyết định và lý do]. File SAM3 chỉ liệt kê ảnh ứng viên, **không chứng minh nhãn trong ảnh là đúng**.
+**Ví dụ từ ảnh thật:** `img_021.jpg` có cụm đèn giao thông nên mỗi cụm dùng một box `traffic_light`; `img_032.jpg` có biển cấm quay đầu nên box chỉ ôm mặt biển và dùng `traffic_sign`, không lấy cả cột.
 
 ## 5. QC và lịch sử
 

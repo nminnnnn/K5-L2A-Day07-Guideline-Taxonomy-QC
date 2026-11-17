@@ -34,6 +34,7 @@ Cách làm đơn giản: **Nhìn vật thật → chọn đúng class → vẽ m
 | `bus` | Xe buýt / xe khách | Xe lớn thiết kế chở nhiều hành khách | Van nhỏ, ô tô con |
 | `bicycle` | Xe đạp | Xe đạp thường, xe đạp thể thao | Xe máy, mô tô |
 | `pickup_truck` | Xe bán tải | Xe có cabin phía trước và thùng hàng hở ở phía sau | Xe tải thùng lớn, SUV |
+| `tuk_tuk` | Xe tuk-tuk | Xe cơ giới ba bánh dạng tuk-tuk, có khoang chở người hoặc hàng | Xe máy hai bánh, xe đạp hoặc xích lô không động cơ |
 | `traffic_light` | Đèn tín hiệu | Cụm đèn dùng để điều khiển giao thông (đỏ/vàng/xanh) | Đèn chiếu sáng đường phố |
 | `traffic_sign` | Biển báo | Biển chỉ dẫn, cấm, cảnh báo hoặc điều tiết giao thông | Biển quảng cáo, tên cửa hàng |
 
@@ -94,6 +95,8 @@ Các ngưỡng phần trăm này là **quy ước của nhóm cho v1.0** để g
 
 **R-14 — Mỗi người làm độc lập:** Chỉ dùng guideline v1.0 đã chốt và bộ class chung. Không xem box của thành viên khác trước khi khóa bản gán độc lập.
 
+**R-15 — Xe tuk-tuk:** Gán `tuk_tuk` cho xe cơ giới ba bánh dạng tuk-tuk. Người ngồi hoặc điều khiển xe vẫn dùng box `person` riêng khi nhận diện được. Không ép tuk-tuk sang `motorcycle`, `car` hoặc `van`.
+
 ## 4. Các ca khó cần thống nhất
 
 | Tình huống | Quy tắc | Quyết định chung | Vì sao |
@@ -108,6 +111,7 @@ Các ngưỡng phần trăm này là **quy ước của nhóm cho v1.0** để g
 | Ảnh không có class nào | R-12 | Không tạo box; vẫn giữ ảnh | Tránh box không có thật |
 | Xe chỉ xuất hiện trong kính phản chiếu | R-13 | Không gán; nếu chưa chắc có phải phản chiếu thì ghi ca để review | Không phải vật trực tiếp trong cảnh, tránh đếm trùng |
 | Nhiều người đứng sát nhau | R-01 | Mỗi người một box nếu phân biệt được | Tránh gộp nhiều người |
+| Xe tuk-tuk ba bánh | R-03, R-15 | Một box `tuk_tuk` cho xe; người nhìn thấy dùng box `person` riêng | Giữ đúng loại phương tiện và không gộp người với xe |
 
 ### Bằng chứng từ ảnh của bộ dữ liệu
 
@@ -148,8 +152,8 @@ Các ngưỡng kỹ thuật hiện có trong `submission/taxonomy.json` của re
 | Phiên bản | Thay đổi | Trạng thái |
 |---|---|---|
 | v0 | Guideline khởi đầu của repo | Tham khảo |
-| v1.0 dự thảo | Tổng hợp 5 guideline cá nhân, đề xuất 10 class và 14 quy tắc | Đã kết thúc |
-| v1.0 đã chốt | Ngày 16/11/2026; mã duyệt: 119, 128, 210, 226, 232; chốt 10 class, ngưỡng che khuất 30%/50%, vật nhỏ dưới 20 px và không gán vật chỉ xuất hiện qua phản chiếu | **Đã thống nhất** |
+| v1.0 dự thảo | Tổng hợp 5 guideline cá nhân, đề xuất taxonomy và các quy tắc thao tác | Đã kết thúc |
+| v1.0 đã chốt | Ngày 16/11/2026; mã duyệt: 119, 128, 210, 226, 232; chốt 11 class đối tượng, ngưỡng che khuất 30%/50%, vật nhỏ dưới 20 px và không gán vật chỉ xuất hiện qua phản chiếu | **Đã thống nhất** |
 | v1.1 | Chỉ cập nhật sau IAA/calibration, kèm lý do và ca cụ thể | Chưa thực hiện |
 
 ---

@@ -8,6 +8,7 @@
     {"name": "bus", "definition": "Xe lớn được thiết kế để chở nhiều hành khách."},
     {"name": "bicycle", "definition": "Xe đạp không có động cơ."},
     {"name": "pickup_truck", "definition": "Xe có cabin phía trước và thùng hàng hở phía sau."},
+    {"name": "tuk_tuk", "definition": "Xe cơ giới ba bánh dạng tuk-tuk, có khoang chở người hoặc hàng."},
     {"name": "motorcycle", "definition": "Xe máy, mô tô."},
     {"name": "person", "definition": "Người đi bộ hoặc người ngồi trên xe."},
     {"name": "traffic_light", "definition": "Cụm đèn tín hiệu dùng để điều khiển giao thông."},

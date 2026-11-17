@@ -1,0 +1,10 @@
+{
+  "round": 1,
+  "reviewer_inputs": {
+    "guideline_gap": 0,
+    "data_problem": 0
+  },
+  "decision": "REWORK",
+  "labels_sha256": "d6f27868dcdc5d66867229b464d9ff3d8535d0d3cbe6499cf6771ad7a91b331f",
+  "review_sha256": "1fd6ba5c59fb4cda5b3143bbdeecbc3ce92e55c02dbcf52d5a182156047f8759"
+}

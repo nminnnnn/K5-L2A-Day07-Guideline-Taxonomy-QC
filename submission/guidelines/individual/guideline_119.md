@@ -4,7 +4,7 @@ Tài liệu ghi nhận quy tắc phân loại và gán nhãn của thành viên 
 
 | Thông tin | Nội dung |
 |---|---|
-| Họ và tên | Nguyễn Thanh Phong |
+| Người thực hiện | Mã `119` |
 | Mã thành viên | `119` |
 | Loại tài liệu | Guideline cá nhân, Pha 1 |
 | Ngày cập nhật | 16/11/2026 |
@@ -62,7 +62,7 @@ Guideline tập trung phân biệt ô tô con, xe bán tải, van, xe tải và 
 | `R-03`       | Xe chở khách lớn    | Chọn bus, không đổi sang van chỉ vì bị khuất một phần. |
 | `R-04`       | Loại xe khó đoán    | Chọn can_review; không tạo class mới khi chưa họp.     |
 
-**Đối chiếu ảnh thật:** Tài liệu hiện chưa ghi mã ảnh `img_0xx` kèm quyết định và lý do cho từng ví dụ. Danh sách ảnh ứng viên từ SAM3 không được xem là bằng chứng xác nhận nhãn trong ảnh.
+**Đối chiếu ảnh thật:** `img_001.jpg` có xe bán tải thùng hở nên chọn `pickup_truck`, không chọn `truck`; `img_007.jpg` có một xe bán tải ở giữa và một xe tải thùng lớn bên phải nên hai xe dùng hai class khác nhau theo R-01/R-02.
 
 ## 5. QC và lịch sử
 

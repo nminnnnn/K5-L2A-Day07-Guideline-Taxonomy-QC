@@ -1,0 +1,44 @@
+image,object_id,error_type,reviewer,rule_id,region,note
+img_001.jpg,2,sai_thuoc_tinh,210,R-04,,occluded_level=0 nhưng phần thân bị bàn và người phía trước che
+img_001.jpg,3,sai_thuoc_tinh,210,R-04,,occluded_level=0 nhưng phần thân dưới bị bàn che
+img_001.jpg,4,sai_thuoc_tinh,210,R-04,,occluded_level=0 nhưng phần thân bị bàn và người khác che
+img_001.jpg,7,sai_thuoc_tinh,210,R-04,,occluded_level=0 không phản ánh phần thân bị che
+img_002.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay
+img_003.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay
+img_004.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay
+img_005.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay
+img_006.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay
+img_007.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay
+img_008.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay
+img_009.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay
+img_010.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay
+img_011.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay
+img_012.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay
+img_013.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay
+img_014.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay
+img_015.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay
+img_016.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay
+img_017.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay
+img_018.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay
+img_019.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay
+img_020.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay
+img_021.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay
+img_022.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay
+img_023.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay
+img_024.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay
+img_025.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay
+img_026.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay
+img_027.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay
+img_028.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay
+img_029.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay
+img_030.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay
+img_031.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay
+img_032.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay
+img_033.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay
+img_034.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay
+img_035.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay
+img_036.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay
+img_037.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay
+img_038.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay
+img_039.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay
+img_040.jpg,,khong,210,,,Đã đối chiếu ảnh gốc guideline v1.1 và overlay

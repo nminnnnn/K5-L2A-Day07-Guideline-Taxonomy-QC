@@ -1,12 +1,11 @@
 
 # Guideline cá nhân 128 — Kiểm tra chất lượng trước khi xuất
 
-Người điền: Huỳnh Ngọc Gia Hân
-Mã sinh viên: 2A202603128
+Người điền: mã `128`
 
 - Phiên bản: v0.1 cá nhân (nháp đề xuất, chưa phải v1.0 nhóm)
 - Ngày: 2026-11-16
-- Người duyệt: 210
+- Người duyệt: mã `210`
 - Phạm vi: bounding box (hình chữ nhật) cho đối tượng giao thông đường bộ
 
 ## 1. Mục tiêu

@@ -1,7 +1,5 @@
 # Guideline cá nhân 210 — Nhận diện nhanh trên đường phố
-Người điền: Nguyễn Nhật Minh
-Mã sinh viên: 2A20263210
->
+Người điền: mã `210`
 
 - Phiên bản: nháp đề xuất (chưa phải v1.0 nhóm)
 - Người duyệt: 119
@@ -53,7 +51,7 @@ Dành cho người mới: nhìn đối tượng thật, chọn đúng tên, vẽ
 | `R-03` | Xe đỗ ven đường | Vẫn đánh nhãn nếu là xe thật và nhìn rõ. |
 | `R-04` | Ảnh quảng cáo xe | Không đánh xe xuất hiện trong tranh/biển quảng cáo. |
 
-**Ví dụ từ ảnh thật:** [thành viên tự điền ít nhất 2 mã `img_0xx` đã mở xem, quyết định và lý do]. File SAM3 chỉ liệt kê ảnh ứng viên, **không chứng minh nhãn trong ảnh là đúng**.
+**Ví dụ từ ảnh thật:** `img_004.jpg` cần tách box người lái khỏi box xe tuk-tuk; `img_018.jpg` không gán người xuất hiện trên billboard; `img_020.jpg` giữ ảnh trong COCO nhưng không gán xe chỉ xuất hiện trong gương phản chiếu.
 
 ## 5. QC và lịch sử
 

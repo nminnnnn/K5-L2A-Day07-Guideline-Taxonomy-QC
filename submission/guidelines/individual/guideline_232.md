@@ -81,6 +81,8 @@ Nếu chưa thể vẽ box, tôi ghi vấn đề cấp ảnh gồm tên ảnh, m
 | `R-08` | Xe chở xe | Xét từng xe thật như một đối tượng riêng nếu thuộc class và đạt ngưỡng kích thước. |
 | `R-09` | Vật ngoài bộ class | Không ép vào class gần giống; ghi vấn đề cấp ảnh nếu cần làm rõ. |
 
+**Đối chiếu ảnh thật:** `img_002.jpg` gán riêng xe tải chở xe và từng ô tô thật trên sàn; `img_020.jpg` không gán xe trong phản chiếu; `img_038.jpg` không gán các mô hình ô tô đồ chơi trong tủ kính.
+
 ## 5. Kiểm tra chất lượng và phiên bản
 
 Trước khi xuất COCO 1.0, tôi kiểm tra class, độ sát của box, đối tượng bị bỏ sót, box trùng và ba thuộc tính `occluded_level`, `truncated`, `can_review`. Ảnh không có đối tượng vẫn phải có trong danh sách ảnh của COCO.

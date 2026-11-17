@@ -13,4 +13,4 @@
 - Số ảnh phải calibration: **0/40** theo candidate tự động; 8 ảnh có sửa QC nguồn được truy vết trong `source_corrections.json` trước khi dựng bản cuối.
 - Vòng QC và số ảnh đã duyệt / cả lô: vòng **1**, duyệt **40/40** ảnh.
 - Tỉ lệ lỗi: **2.5% theo ảnh (1/40)**, **0.6% theo đối tượng (4/723)**; vật bỏ sót trong phiếu: **0**.
-- **Quyết định: Rework** — thuộc tính `occluded_level` mặc định lặp lại trên các đối tượng bị che, vượt ngưỡng lỗi theo ảnh 2% và cần rà lại toàn lô trước Release.
+- **Quyết định: Rework (đã chấp nhận làm bản trung gian)** — giữ nguyên toàn bộ kết quả hiện tại để tiếp tục công việc; việc rà `occluded_level` trên toàn lô được chuyển sang vòng sửa tiếp theo trước khi phát hành chính thức.

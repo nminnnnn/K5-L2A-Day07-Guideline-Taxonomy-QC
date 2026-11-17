@@ -38,6 +38,6 @@ QC trực quan nguồn đã sửa 8 ảnh: thêm xe bán tải ở `img_001`, th
 ## 5. Quyết định bàn giao
 
 - Quyết định: Rework
-- Lý do, người nhận và phạm vi sử dụng: Tỷ lệ ảnh lỗi 1/40 = 2.5% vượt ngưỡng 2%, đồng thời lỗi thuộc tính lặp. Người nhận dùng bản này làm hồ sơ QC và đầu vào cho vòng sửa thuộc tính, không dùng làm bản Release.
-- Nếu còn việc: Rà `occluded_level` trên toàn bộ 723 đối tượng, sửa bốn object đã ghi và các ca cùng loại, chạy lại `build_final.py`, mở vòng QC 2 và giữ nguyên vòng 1.
+- Lý do, người nhận và phạm vi sử dụng: Tỷ lệ ảnh lỗi 1/40 = 2.5% vượt ngưỡng 2%, đồng thời lỗi thuộc tính lặp. Toàn bộ kết quả hiện tại được chấp nhận làm bản trung gian phục vụ tiếp tục xử lý và làm bằng chứng cho vòng sửa sau; trạng thái kỹ thuật vẫn là Rework.
+- Nếu còn việc: Việc rà `occluded_level` trên toàn bộ 723 đối tượng được hoãn sang vòng tiếp theo. Khi thực hiện, sửa bốn object đã ghi và các ca cùng loại, chạy lại `build_final.py`, mở vòng QC 2 và giữ nguyên toàn bộ bằng chứng vòng 1.
 - Kiểm ngược từ báo cáo tới ảnh, rule và nhãn: `img_001.jpg` → R-04 → object ID 2/3/4/7 trong `labels_snapshot.json` và `qc_review.csv`; kết quả vòng 1 là REWORK.
